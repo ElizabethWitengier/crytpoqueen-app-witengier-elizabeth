@@ -1,13 +1,16 @@
+import React from "react";
 import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Videos from "@/components/Videos";
 
-export default function Home() {
+const Learn = () => {
   return (
     <div>
       <Navbar />
-      <Hero />
+      <Videos />
       <Footer />
     </div>
   );
-}
+};
+
+export default Learn;
