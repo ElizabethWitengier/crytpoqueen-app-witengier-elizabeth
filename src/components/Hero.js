@@ -10,9 +10,10 @@ const Hero = () => {
           </h1>
 
           <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            SheCoin is a platform designed to help women learn about and invest
-            in cryptocurrency. Our mission is to empower women to take control
-            of their finances and participate in the exciting crypto world.
+            Crypto Queen is a platform designed to help women learn about and
+            invest in cryptocurrency. Our mission is to empower women to take
+            control of their finances and participate in the exciting crypto
+            world.
           </p>
           <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
             Join our community and connect with other women learning and
