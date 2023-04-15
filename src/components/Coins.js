@@ -1,86 +1,54 @@
-import React from "react";
+import Link from "next/link";
 
-const Coins = () => {
+const Coins = ({ coins }) => {
   return (
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-32">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" class="px-6 py-3">
-              Product name
+              Market Rank
             </th>
             <th scope="col" class="px-6 py-3">
-              Color
+              Name
             </th>
             <th scope="col" class="px-6 py-3">
-              Category
+              Symbol
             </th>
             <th scope="col" class="px-6 py-3">
               Price
             </th>
             <th scope="col" class="px-6 py-3">
-              <span class="sr-only">Edit</span>
+              MarketCap
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          {coins?.map((coin) => (
+            <tr
+              key={coin.id}
+              class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">Silver</td>
-            <td class="px-6 py-4">Laptop</td>
-            <td class="px-6 py-4">$2999</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                Edit
-              </a>
-            </td>
-          </tr>
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-            >
-              Microsoft Surface Pro
-            </th>
-            <td class="px-6 py-4">White</td>
-            <td class="px-6 py-4">Laptop PC</td>
-            <td class="px-6 py-4">$1999</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                Edit
-              </a>
-            </td>
-          </tr>
-          <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-            >
-              Magic Mouse 2
-            </th>
-            <td class="px-6 py-4">Black</td>
-            <td class="px-6 py-4">Accessories</td>
-            <td class="px-6 py-4">$99</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                Edit
-              </a>
-            </td>
-          </tr>
+              <td class="px-6 py-4 text-center">{coin.market_cap_rank}</td>
+              <Link href={"/coin/" + coin.id}>
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium flex gap-4 items-center text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  <img
+                    src={coin.image}
+                    width={30}
+                    height={30}
+                    alt={coin.name}
+                  />
+                  {coin.name}
+                </th>
+              </Link>
+              <td class="px-6 py-4">{coin.symbol.toUpperCase()}</td>
+              <td class="px-6 py-4">${coin.current_price.toLocaleString()}</td>
+              <td class="px-6 py-4">${coin.market_cap.toLocaleString()}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
