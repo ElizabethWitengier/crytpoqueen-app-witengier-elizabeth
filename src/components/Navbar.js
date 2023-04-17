@@ -1,9 +1,11 @@
+import { useUserContext } from "@/context/UserContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 
 const Navbar = () => {
   const router = useRouter();
+  const { user, setUser } = useUserContext();
   const activeClass =
     "block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500";
   const unActiveClass =
@@ -11,7 +13,14 @@ const Navbar = () => {
 
   const homeClass = router.pathname === "/" ? activeClass : unActiveClass,
     searchClass = router.pathname === "/search" ? activeClass : unActiveClass,
-    learnClass = router.pathname === "/learn" ? activeClass : unActiveClass;
+    learnClass = router.pathname === "/learn" ? activeClass : unActiveClass,
+    favoritesClass =
+      router.pathname === "/favorites" ? activeClass : unActiveClass;
+
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+  };
   return (
     <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -19,14 +28,25 @@ const Navbar = () => {
           <img src="/next.svg" class="h-8 mr-3" alt="Flowbite Logo" />
         </a>
         <div class="flex md:order-2">
-          <Link href={"/login"}>
+          {user ? (
             <button
+              onClick={logout}
               type="button"
               class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Login
+              Logout
             </button>
-          </Link>
+          ) : (
+            <Link href={"/login"}>
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Login
+              </button>
+            </Link>
+          )}
+
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -70,6 +90,13 @@ const Navbar = () => {
                 Search
               </Link>
             </li>
+            {user && (
+              <li>
+                <Link href="/favorites" class={favoritesClass}>
+                  Favorites
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>
