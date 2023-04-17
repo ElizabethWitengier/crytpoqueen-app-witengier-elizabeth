@@ -1,3 +1,4 @@
+import { useUserContext } from "@/context/UserContext";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -7,6 +8,8 @@ function LoginForm() {
     password: "",
   });
   const [reqMessage, setreqMessage] = useState(null);
+
+  const { setUser } = useUserContext();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,8 +23,13 @@ function LoginForm() {
         body: JSON.stringify(formData),
       });
       const user = await res.json();
-      console.log(user);
-      setreqMessage("Success!!!, User Logged In");
+      if (user.message) {
+        setreqMessage(user.message);
+      } else {
+        setUser(user);
+        localStorage.setItem("user", JSON.stringify(user));
+        setreqMessage("Success!!!, User Logged In");
+      }
     } catch (error) {
       console.error(error.message);
       setreqMessage("Error!! Invalid email or password");
