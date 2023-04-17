@@ -2,7 +2,7 @@ import { connectToDatabase } from "../../utils/mongodb";
 import bcrypt from "bcrypt";
 
 export default async function handler(req, res) {
-  const { email, password } = req.body;
+  const { email, password } = JSON.parse(req.body);
 
   if (!email || !password) {
     return res
