@@ -2,10 +2,18 @@ import React from "react";
 
 const SearchBar = ({ value, handleChange, handleSubmit }) => {
   return (
-    <div className="flex justify-center flex-col items-center w-full mt-32">
-      <h3>Search</h3>
+    <div className="flex justify-center mb-20 items-center w-full mt-48">
+      <h3 className="text-xl text-right flex-[1_0_22%] border-r-8 mr-4 pr-4 border-blue">
+        Search
+        <br />
+        Tip
+      </h3>
+      <p className="flex-[1_0_33%]">
+        Use relevant keywords such as "Bitcoin," "Ethereum," or the name of the
+        specific cryptocurrency you want to know about.{" "}
+      </p>
 
-      <form className="w-1/6" onSubmit={handleSubmit}>
+      <form className="flex-[1_0_35%]" onSubmit={handleSubmit}>
         <label
           for="default-search"
           class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
