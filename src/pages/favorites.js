@@ -3,8 +3,18 @@ import Navbar from "@/components/Navbar";
 import { useUserContext } from "@/context/UserContext";
 
 const Favorites = () => {
-  const { user } = useUserContext();
+  const { user, setUser } = useUserContext();
   const favCoin = user?.favorites;
+
+  const removeFav = async (id) => {
+    await fetch(`/api/favorites/${user._id}/${id}`, { method: "DELETE" });
+    await setUser({
+      ...user,
+      favorites: [...user?.favorites.filter((fav) => fav.id !== id)],
+    });
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+
   return (
     <div>
       <Navbar />
@@ -32,12 +42,13 @@ const Favorites = () => {
                 <span class="text-3xl font-bold text-gray-900 dark:text-white">
                   ${item.market_data.current_price.usd.toLocaleString()}
                 </span>
-                <a
+                <button
+                  onClick={() => removeFav(item.id)}
                   href="#"
                   class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Remove from favorites
-                </a>
+                </button>
               </div>
             </div>
           </div>

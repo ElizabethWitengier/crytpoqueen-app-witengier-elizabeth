@@ -7,6 +7,7 @@ const SingleCoin = ({ singleCoin }) => {
     <div>
       <Navbar />
       <SingleCoinCard
+        coin={singleCoin}
         id={singleCoin.id}
         image={singleCoin.image.large}
         title={singleCoin.name}

@@ -1,11 +1,36 @@
 import { useUserContext } from "@/context/UserContext";
 import React from "react";
 
-const SingleCoinCard = ({ id, image, title, symbol, price, description }) => {
-  const { user } = useUserContext();
-  const isLiked = user?.favorites.find((favorite) => favorite.id === id);
+const SingleCoinCard = ({
+  id,
+  image,
+  title,
+  symbol,
+  price,
+  description,
+  coin,
+}) => {
+  const { user, setUser } = useUserContext();
+  let isLiked = user?.favorites?.find((favorite) => favorite.id === id);
+
+  const handleFav = async () => {
+    if (isLiked) {
+      await fetch(`/api/favorites/${user._id}/${id}`, { method: "DELETE" });
+      await setUser({
+        ...user,
+        favorites: [...user?.favorites.filter((fav) => fav.id !== id)],
+      });
+      localStorage.setItem("user", JSON.stringify(user));
+      isLiked = false;
+    } else {
+      await fetch(`/api/favorites/${user._id}/${id}`, { method: "POST" });
+      await setUser({ ...user, favorites: [...user?.favorites, coin] });
+      localStorage.setItem("user", JSON.stringify(user));
+      isLiked = true;
+    }
+  };
   return (
-    <div className="flex rounded-lg shadow-lg items-start justify-center w-1/2 mx-auto h-auto mt-48">
+    <div className="flex rounded-lg shadow-lg items-start justify-center w-1/2 mx-auto h-auto mt-64">
       <img
         src={image}
         alt=" random imgee"
@@ -15,6 +40,7 @@ const SingleCoinCard = ({ id, image, title, symbol, price, description }) => {
       <div class="relative px-4 -mt-16  ">
         {user && (
           <svg
+            onClick={handleFav}
             width="24"
             height="24"
             xmlns="http://www.w3.org/2000/svg"
