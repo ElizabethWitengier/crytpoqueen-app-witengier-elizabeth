@@ -1,5 +1,22 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import SingleCoinCard from "@/components/SingleCoinCard";
+
 const SingleCoin = ({ singleCoin }) => {
-  return <div>Coin found</div>;
+  return (
+    <div>
+      <Navbar />
+      <SingleCoinCard
+        id={singleCoin.id}
+        image={singleCoin.image.large}
+        title={singleCoin.name}
+        symbol={singleCoin.symbol}
+        description={singleCoin.description.en}
+        price={singleCoin.market_data.current_price.usd}
+      />
+      <Footer />
+    </div>
+  );
 };
 
 export async function getServerSideProps({ params }) {

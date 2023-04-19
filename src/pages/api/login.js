@@ -23,5 +23,11 @@ export default async function handler(req, res) {
   if (!isValidPassword) {
     return res.status(401).json({ message: "Invalid password" });
   }
-  res.status(200).json(user);
+
+  const favoritesRes = await fetch(
+    process.env.BASE_URL + "/api/favorites/" + user._id
+  );
+  const favorites = await favoritesRes.json();
+
+  res.status(200).json({ ...user, favorites });
 }
