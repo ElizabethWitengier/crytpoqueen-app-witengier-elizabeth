@@ -1,28 +1,21 @@
-import { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
-
-const SingleCoin = () => {
-  const [coin, setCoin] = useState(null);
-  const router = useRouter();
-  const { single_coin } = router.query;
-
-  useEffect(() => {
-    const getCoin = async () => {
-      const res = await fetch("/api/coin/" + single_coin);
-      const singleCoin = await res.json();
-      if (singleCoin.error) {
-        setCoin(null);
-      } else {
-        setCoin(singleCoin);
-      }
-    };
-    getCoin();
-  }, [single_coin]);
-
-  if (!coin) {
-    return "Cannot find coin with id of " + single_coin;
-  }
-  return <div>{single_coin}</div>;
+const SingleCoin = ({ singleCoin }) => {
+  return <div>Coin found</div>;
 };
+
+export async function getServerSideProps({ params }) {
+  const { single_coin } = params;
+  const res = await fetch(process.env.BASE_URL + "/api/coin/" + single_coin);
+  const singleCoin = await res.json();
+  if (singleCoin.error) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      singleCoin,
+    },
+  };
+}
 
 export default SingleCoin;

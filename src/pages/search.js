@@ -2,22 +2,12 @@ import Coins from "@/components/Coins";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import SearchBar from "@/components/SearchBar";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const search = () => {
-  const [coins, setCoins] = useState([]);
-  const [filteredCoins, setFilteredCoins] = useState([]);
+const search = ({ coins }) => {
+  const [filteredCoins, setFilteredCoins] = useState(coins);
   const [searchValue, setSearchValue] = useState("");
-  useEffect(() => {
-    const getCoins = async () => {
-      const res = await fetch("/api/coins");
-      const allCoins = await res.json();
 
-      setCoins(allCoins);
-      setFilteredCoins(allCoins);
-    };
-    getCoins();
-  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     setFilteredCoins(
@@ -34,10 +24,29 @@ const search = () => {
         handleChange={(e) => setSearchValue(e.target.value)}
         handleSubmit={handleSubmit}
       />
-      <Coins coins={filteredCoins} />
+      {filteredCoins.length < 0 ? (
+        "Loading..."
+      ) : (
+        <Coins coins={filteredCoins} />
+      )}
       <Footer />
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await fetch(process.env.BASE_URL + "/api/coins");
+  const coins = await res.json();
+  if (coins.error) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      coins,
+    },
+  };
+}
 
 export default search;

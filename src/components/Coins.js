@@ -30,10 +30,13 @@ const Coins = ({ coins }) => {
               class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
               <td class="px-6 py-4 text-center">{coin.market_cap_rank}</td>
-              <Link href={"/coin/" + coin.id}>
-                <th
-                  scope="row"
-                  class="px-6 py-4 font-medium flex gap-4 items-center text-gray-900 whitespace-nowrap dark:text-white"
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                <Link
+                  className="flex gap-4 items-center"
+                  href={"/coin/" + coin.id}
                 >
                   <img
                     src={coin.image}
@@ -42,8 +45,8 @@ const Coins = ({ coins }) => {
                     alt={coin.name}
                   />
                   {coin.name}
-                </th>
-              </Link>
+                </Link>
+              </th>
               <td class="px-6 py-4">{coin.symbol.toUpperCase()}</td>
               <td class="px-6 py-4">${coin.current_price.toLocaleString()}</td>
               <td class="px-6 py-4">${coin.market_cap.toLocaleString()}</td>
