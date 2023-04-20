@@ -20,6 +20,9 @@ const search = ({ coins }) => {
     <div>
       <Navbar />
       <SearchBar
+        text={
+          ' Use relevant keywords such as "Bitcoin," "Ethereum," or the name of the specific cryptocurrency you want to know about.'
+        }
         value={searchValue}
         handleChange={(e) => setSearchValue(e.target.value)}
         handleSubmit={handleSubmit}

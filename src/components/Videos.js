@@ -2,7 +2,7 @@ import React from "react";
 
 const Videos = () => {
   return (
-    <div class="container mx-auto mt-48">
+    <div class="container mx-auto pt-48">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="block w-100 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

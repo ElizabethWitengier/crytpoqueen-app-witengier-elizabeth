@@ -37,7 +37,7 @@ function LoginForm() {
   };
 
   return (
-    <section class="bg-gray-50 dark:bg-gray-900 mt-24">
+    <section class="bg-gray-50 dark:bg-gray-900 pt-24">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -92,15 +92,15 @@ function LoginForm() {
               <div>{reqMessage && reqMessage}</div>{" "}
               <button
                 type="submit"
-                class="text-white bg-blue hover:bg-gold focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue dark:hover:bg-gold dark:focus:ring-gold"
+                class="text-white bg-blue hover:bg-gold focus:ring-4 focus:outline-none focus:ring-gold-300 font-medium rounded-lg text-sm w-full px-8 py-2 text-center mr-3 md:mr-0 dark:bg-gold dark:hover:bg-gold dark:focus:ring-gold"
               >
-                Sign in
+                SIGN IN
               </button>
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?{" "}
                 <Link
                   href="/signup"
-                  class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                  class="font-medium text-primary-600 text-green hover:underline dark:text-primary-500"
                 >
                   Sign up
                 </Link>

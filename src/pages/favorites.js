@@ -1,6 +1,8 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import SearchBar from "@/components/SearchBar";
 import { useUserContext } from "@/context/UserContext";
+import Link from "next/link";
 
 const Favorites = () => {
   const { user, setUser } = useUserContext();
@@ -16,24 +18,30 @@ const Favorites = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="mt-32">
+      <SearchBar
+        searchbar={false}
+        text={
+          ' Fav Use relevant keywords such as "Bitcoin," "Ethereum," or the name of the specific cryptocurrency you want to know about.'
+        }
+      />
+      <div className="md:mx-12 place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 transition-all">
         {favCoin?.map((item) => (
-          <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
+          <div class="w-full max-w-[350px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <Link href={"/coin/" + item.id}>
               <img
-                class="p-8 rounded-t-lg"
+                class="p-8 w-full object-cover"
                 src={item.image.large}
                 alt="product image"
               />
-            </a>
+            </Link>
             <div class="px-5 pb-5">
-              <a href="#">
+              <Link href={"/coin/" + item.id}>
                 <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {item.name + ", " + item.symbol.toUpperCase()}
                 </h5>
-              </a>
+              </Link>
               {/* <div
               className="text-gray-700"
               dangerouslySetInnerHTML={{ __html: item.description.en }}
@@ -42,13 +50,20 @@ const Favorites = () => {
                 <span class="text-3xl font-bold text-gray-900 dark:text-white">
                   ${item.market_data.current_price.usd.toLocaleString()}
                 </span>
-                <button
+                <svg
                   onClick={() => removeFav(item.id)}
-                  href="#"
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  width="24"
+                  height="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill={"green"}
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="heart-icon"
                 >
-                  Remove from favorites
-                </button>
+                  <path d="M12 21.35l-1.45-1.32C5.4 14.58 2 12.18 2 8.5 2 5.42 4.42 3 7.5 3c1.93 0 3.68.93 4.5 2.36C13.82 3.93 15.57 3 17.5 3 20.58 3 23 5.42 23 8.5c0 3.68-3.4 6.08-8.55 11.53L12 21.35z" />
+                </svg>
               </div>
             </div>
           </div>
