@@ -50,8 +50,7 @@ CoinGecko is the API used for the CryptoQueen website. CoinGecko provides live d
 - BASE_URL=http://localhost:3000 (for local)
 - BASE_URL=https://crytpoqueen-app-witengier-elizabeth.vercel.app (for Vercel deployment)
 
-## API Routes & Page Informaiton
-
+## API Routes & Page Information
 
 Pages
 - Login
@@ -69,6 +68,12 @@ API Routes
 * Single Coin (/coin/single_coin))
 * Favorites (/favorites/user_id/single_coin)
 
+## Wireframe Evolution (Final Draft for Project)
 
-
-
+![1](https://user-images.githubusercontent.com/97287195/233719310-473a7ea0-1c96-4146-b154-e32c15daf54d.svg)
+![2](https://user-images.githubusercontent.com/97287195/233719348-2e600e23-6eff-41cb-b9d1-b0239864077d.svg)
+![3](https://user-images.githubusercontent.com/97287195/233719355-ea9d6468-78aa-4c43-9311-781fe9633c83.svg)
+![4](https://user-images.githubusercontent.com/97287195/233719357-ba120e62-6369-4175-a5f5-ac47e377a619.svg)
+![5](https://user-images.githubusercontent.com/97287195/233719364-0284638f-1b2a-44c4-bc8b-a5591dc8f740.svg)
+![6](https://user-images.githubusercontent.com/97287195/233719367-a1ffd0a3-d259-4bd9-8a24-3ac7adc975e7.svg)
+![7](https://user-images.githubusercontent.com/97287195/233719371-29526e08-bff3-4846-99fe-d84f782c5a92.svg)
