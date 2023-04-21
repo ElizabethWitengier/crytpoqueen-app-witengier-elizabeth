@@ -70,10 +70,10 @@ API Routes
 
 ## Wireframe Evolution (Final Draft for Project)
 
-![1](https://user-images.githubusercontent.com/97287195/233719310-473a7ea0-1c96-4146-b154-e32c15daf54d.svg)
-![2](https://user-images.githubusercontent.com/97287195/233719348-2e600e23-6eff-41cb-b9d1-b0239864077d.svg)
-![3](https://user-images.githubusercontent.com/97287195/233719355-ea9d6468-78aa-4c43-9311-781fe9633c83.svg)
-![4](https://user-images.githubusercontent.com/97287195/233719357-ba120e62-6369-4175-a5f5-ac47e377a619.svg)
-![5](https://user-images.githubusercontent.com/97287195/233719364-0284638f-1b2a-44c4-bc8b-a5591dc8f740.svg)
-![6](https://user-images.githubusercontent.com/97287195/233719367-a1ffd0a3-d259-4bd9-8a24-3ac7adc975e7.svg)
-![7](https://user-images.githubusercontent.com/97287195/233719371-29526e08-bff3-4846-99fe-d84f782c5a92.svg)
+![1](https://user-images.githubusercontent.com/97287195/233719709-6a6bbea3-3490-4632-bd96-a6fd4f824a0f.svg)
+![2](https://user-images.githubusercontent.com/97287195/233719757-5c974502-2ce1-4b69-bd9f-1a21cd83c05d.svg)
+![3](https://user-images.githubusercontent.com/97287195/233719759-0e93bcd6-2ef1-4259-a1a6-75d561453456.svg)
+![4](https://user-images.githubusercontent.com/97287195/233719762-c7048bf2-5716-411f-ac55-96058cbf500a.svg)
+![5](https://user-images.githubusercontent.com/97287195/233719773-bdbb4605-28d6-4b12-87ea-14200c565aae.svg)
+![6](https://user-images.githubusercontent.com/97287195/233719775-408fcdcf-a736-4e8f-8b7b-3664f52ecba1.svg)
+![7](https://user-images.githubusercontent.com/97287195/233719779-768eb0a0-09e9-4cac-8077-d94f96c856de.svg)
