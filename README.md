@@ -45,4 +45,30 @@ CoinGecko is the API used for the CryptoQueen website. CoinGecko provides live d
 
 ## Environmental Variables
 
+- MONGODB_URI=mongodb+srv://admin:psOyf2CZIda9Iwsl@cluster0.cybisei.mongodb.net/
+- MONGODB_DB=CryptoQueenDB
+- BASE_URL=http://localhost:3000 (for local)
+- BASE_URL=https://crytpoqueen-app-witengier-elizabeth.vercel.app (for Vercel deployment)
+
+## API Routes & Page Informaiton
+
+```bash
+Pages
+-Login
+-Signup
+-Home
+-Search
+-Single Coin Page
+-Learn
+-Favorites
+
+API Routes
+-Login (/login)
+-Signup (/signup)
+-All Coins (/coins)
+-Single Coin (/coin/single_coin))
+-Favorites (/favorites/user_id/single_coin)
+```
+
+
 
