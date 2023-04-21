@@ -54,13 +54,13 @@ CoinGecko is the API used for the CryptoQueen website. CoinGecko provides live d
 
 ```bash
 Pages
--Login
--Signup
--Home
--Search
--Single Coin Page
--Learn
--Favorites
+- Login
+- Signup
+- Home
+- Search
+- Single Coin Page
+- Learn
+- Favorites
 
 API Routes
 *Login (/login)
