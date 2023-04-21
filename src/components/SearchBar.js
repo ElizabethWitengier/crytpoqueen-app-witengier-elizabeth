@@ -9,7 +9,7 @@ const SearchBar = ({
 }) => {
   return (
     <div className="flex flex-col gap-24 md:gap-0 md:flex-row justify-center mb-20 items-center w-full pt-48">
-      <h3 className="text-xl text-right md:flex-[1_0_22%] border-r-4 mr-4 pr-4 border-blue text-gold">
+      <h3 className="text-right text-2xl font-extrabold md:flex-[1_0_22%] border-r-4 mr-4 pr-4 border-blue text-gold">
         CRYPTO
         <br />
         QUEEN
@@ -19,10 +19,13 @@ const SearchBar = ({
       <p className="text-center md:text-left md:flex-[1_0_33%]">{text}</p>
 
       {searchbar ? (
-        <form className="w-full md:flex-[1_0_35%]" onSubmit={handleSubmit}>
+        <form
+          className="w-full mr-8 ml-8 md:flex-[1_0_35%]"
+          onSubmit={handleSubmit}
+        >
           <label
             for="default-search"
-            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            class="mb-2 text-sm font-medium font-bold text-gray-900 sr-only dark:text-white"
           >
             Search
           </label>
@@ -57,7 +60,7 @@ const SearchBar = ({
               type="submit"
               class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-green focus:ring-4 focus:outline-none focus:ring-green font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue dark:hover:bg-green dark:focus:ring-green"
             >
-              Search
+              SEARCH
             </button>
           </div>
         </form>

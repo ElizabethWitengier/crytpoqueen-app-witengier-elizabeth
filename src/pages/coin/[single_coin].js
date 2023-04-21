@@ -10,7 +10,7 @@ const SingleCoin = ({ singleCoin }) => {
       <SearchBar
         searchbar={false}
         text={
-          ' Fav Use relevant keywords such as "Bitcoin," "Ethereum," or the name of the specific cryptocurrency you want to know about.'
+          "Take note of any trends or patterns that you notice, and use this information to inform your investment strategy. "
         }
       />
       <SingleCoinCard

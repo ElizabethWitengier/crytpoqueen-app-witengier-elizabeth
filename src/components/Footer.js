@@ -9,7 +9,6 @@ const Footer = () => {
           <a href="/" class="hover:underline">
             CryptoQueen™
           </a>
-          . All Rights Reserved.
         </span>
       </div>
     </footer>

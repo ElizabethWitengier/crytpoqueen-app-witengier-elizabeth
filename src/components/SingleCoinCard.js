@@ -30,10 +30,10 @@ const SingleCoinCard = ({
     }
   };
   return (
-    <div className="flex flex-col md:flex-row rounded-lg shadow-lg items-start justify-center md:w-1/2 mx-auto h-auto pt-24">
+    <div className="flex flex-col md:flex-row rounded-lg shadow-lg items-start justify-center md:w-1/2 mx-auto h-auto pt-24 mb-8">
       <img
         src={image}
-        alt=" random imgee"
+        alt="coin image"
         class="w-full lg:max-w-sm h-1/2 object-cover object-center"
       />
 
@@ -41,12 +41,12 @@ const SingleCoinCard = ({
         <div class="p-6">
           <div className="flex justify-between items-center">
             <div>
-              <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+              <h4 class="mt-1 text-2xl font-extrabold uppercase leading-tight truncate">
                 {title}
               </h4>
 
               <h5 class="mt-1">
-                ${price.toLocaleString() + "  " + symbol.toUpperCase()}
+                ${price.toLocaleString() + " " + symbol.toUpperCase()}
               </h5>
             </div>
             {user && (

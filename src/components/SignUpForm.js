@@ -24,11 +24,13 @@ function LoginForm() {
       if (user.message) {
         setreqMessage(user.message);
       } else {
-        setreqMessage("Success!!!, You have created an account.");
+        setreqMessage(
+          "Awesome job, Queen! You have created an account. You can now sign in to your account."
+        );
       }
     } catch (error) {
       console.error(error.message);
-      setreqMessage("Error!! Some error occured, please try again later.");
+      setreqMessage("Darn! Some error occured, please try again later.");
     }
   };
 
@@ -37,8 +39,8 @@ function LoginForm() {
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Sign Up for an account
+            <h1 class="text-2xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              SIGN UP FOR AN ACCOUNT
             </h1>
             <form class="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
@@ -98,7 +100,7 @@ function LoginForm() {
               <div>{reqMessage && reqMessage}</div>{" "}
               <button
                 type="submit"
-                class="text-white bg-green hover:bg-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2 w-full text-center mr-3 md:mr-0 dark:bg-blue dark:hover:bg-gold dark:focus:ring-gold"
+                class="text-white bg-green hover:bg-gold focus:ring-4 focus:outline-none focus:ring-gold-300 font-2xl font-extrabold rounded-lg text-sm px-8 py-2 w-full text-center mr-3 md:mr-0 dark:bg-gold dark:hover:bg-gold dark:focus:ring-gold"
               >
                 SIGN UP
               </button>

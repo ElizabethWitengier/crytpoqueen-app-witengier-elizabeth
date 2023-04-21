@@ -21,7 +21,7 @@ const search = ({ coins }) => {
       <Navbar />
       <SearchBar
         text={
-          ' Use relevant keywords such as "Bitcoin," "Ethereum," or the name of the specific cryptocurrency you want to know about.'
+          "The search function is a powerful tool that can help you quickly find the information you need, including specific coins and their market trends. Click on each coin to learn more."
         }
         value={searchValue}
         handleChange={(e) => setSearchValue(e.target.value)}

@@ -28,11 +28,11 @@ function LoginForm() {
       } else {
         setUser(user);
         localStorage.setItem("user", JSON.stringify(user));
-        setreqMessage("Success!!!, User Logged In");
+        setreqMessage("Great job, Queen! You have logged in successfully.");
       }
     } catch (error) {
       console.error(error.message);
-      setreqMessage("Error!! Invalid email or password");
+      setreqMessage("Darn! Invalid email or password");
     }
   };
 
@@ -41,8 +41,8 @@ function LoginForm() {
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Sign in to your account
+            <h1 class="text-xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              SIGN IN TO YOUR ACCOUNT
             </h1>
             <form class="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
@@ -82,19 +82,17 @@ function LoginForm() {
                 />
               </div>
               <div class="flex items-center justify-between">
-                <a
-                  href="#"
-                  class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >
-                  Forgot password?
+                <a class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">
+                  You must sign in to use the favorites feature. It's totally
+                  worth it, Queen!
                 </a>
               </div>
               <div>{reqMessage && reqMessage}</div>{" "}
               <button
                 type="submit"
-                class="text-white bg-blue hover:bg-gold focus:ring-4 focus:outline-none focus:ring-gold-300 font-medium rounded-lg text-sm w-full px-8 py-2 text-center mr-3 md:mr-0 dark:bg-gold dark:hover:bg-gold dark:focus:ring-gold"
+                class="text-white bg-gold hover:bg-gold focus:ring-4 focus:outline-none focus:ring-gold-300 font-2xl font-extrabold rounded-lg text-sm w-full px-8 py-2 text-center mr-3 md:mr-0 dark:bg-gold dark:hover:bg-gold dark:focus:ring-gold"
               >
-                SIGN IN
+                LOGIN
               </button>
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?{" "}

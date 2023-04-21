@@ -23,7 +23,7 @@ const Favorites = () => {
       <SearchBar
         searchbar={false}
         text={
-          ' Fav Use relevant keywords such as "Bitcoin," "Ethereum," or the name of the specific cryptocurrency you want to know about.'
+          "Keep an eye on the ever-evolving market trends and try to identify patterns. "
         }
       />
       <div className="md:mx-12 place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 transition-all">
