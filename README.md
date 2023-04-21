@@ -36,3 +36,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Additional Information About this Project
+
+CryptoQueen is a NextJS and React application designed to empower women by educating them about cryptocurrency. Its mission is to break down the barriers that have prevented women from entering the crypto space by providing them with the knowledge and tools they need to invest confidently and trade cryptocurrencies. By equipping women with access to the world of cryptocurrency, CryptoQeen aims to close the gender gap in this rapidly growing industry and promote financial equality. The app offers a user-friendly interface for cryptocurrency searching, saving coins to favorites, and educational resources.
+
+CoinGecko is the API used for the CryptoQueen website. CoinGecko provides live data on different cryptocurrencies and allows testing on the documentation site. MongoDB Atlas hosts the database because it offers a user-friendly interface, automated security features, built-in replication, backups, point-in-time recovery, fine-grained monitoring, and automatic patching. MongoDB stores users' names, emails, passwords, and favorites. Users must create an account using the "favorites feature," which saves their preferred coins.
+
+## Environmental Variables
+
+
