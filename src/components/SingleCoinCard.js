@@ -19,13 +19,23 @@ const SingleCoinCard = ({
       await setUser({
         ...user,
         favorites: [...user?.favorites.filter((fav) => fav.id !== id)],
+});
       });
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          ...user,
+          favorites: [...user?.favorities.filter((fav) => fav.id !== id)],
+        })
+      );
       isLiked = false;
     } else {
       await fetch(`/api/favorites/${user._id}/${id}`, { method: "POST" });
       await setUser({ ...user, favorites: [...user?.favorites, coin] });
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ ...user, favorites: [...user?.favorites, coin] })
+      );
       isLiked = true;
     }
   };
