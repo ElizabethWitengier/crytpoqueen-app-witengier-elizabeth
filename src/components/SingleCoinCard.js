@@ -19,7 +19,6 @@ const SingleCoinCard = ({
       await setUser({
         ...user,
         favorites: [...user?.favorites.filter((fav) => fav.id !== id)],
-});
       });
       localStorage.setItem(
         "user",
